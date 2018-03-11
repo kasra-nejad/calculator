@@ -1,3 +1,5 @@
+"use strict";
+
 let numbersDisplayed = [];
 let totalArray = [];
 const display = document.querySelector('.display');
