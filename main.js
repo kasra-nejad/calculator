@@ -1,10 +1,10 @@
 "use strict";
-const ADD_UP = (a, b) => (parseFloat(a) + parseFloat(b)).toFixed(1);
-const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b)).toFixed(1);
-const MULTI = (a, b) => (parseFloat(a) * parseFloat(b)).toFixed(1);
-const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b)).toFixed(1);
-const SQRT = (a) => (Math.sqrt(a)).toFixed(1);
-const PERCENT = (a, b) => (parseFloat(a) * (100 / b)).toFixed(1);
+const ADD_UP = (a, b) => (parseFloat(a) + parseFloat(b));
+const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b));
+const MULTI = (a, b) => (parseFloat(a) * parseFloat(b));
+const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b));
+const SQRT = (a) => (Math.sqrt(a));
+const PERCENT = (a, b) => (parseFloat(a) * (100 / b));
 const DISPLAY = document.querySelector('.display');
 
 let numbersDisplayed = [];
@@ -73,7 +73,7 @@ function action(target, operator, operatorType) {
     target.classList.remove("active");
 // (numbersDisplayed.length === 0) ? numbersDisplayed.push(1): numbersDisplayed;
     totalArray.push(numbersDisplayed.join(''));
-    accumulator = (Math.sqrt(totalArray[0])).toFixed(1);
+    accumulator = (Math.sqrt(totalArray[0]));
     totalArray.splice(0, totalArray.length, accumulator);
     DISPLAY.innerHTML = totalArray.join('');
     console.log(totalArray);
