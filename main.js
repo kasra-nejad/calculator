@@ -12,6 +12,7 @@ let totalArray = [];
 let accumulator = [];
 let digitKeys = document.querySelectorAll('.digits .button');
 let actionKeys = document.querySelectorAll('.actions .button');
+let equalKey = document.querySelector('.equal .button');
 
 digitKeys.forEach(key => key.addEventListener("click", logNumber));
 actionKeys.forEach(key => key.addEventListener("click", operator));
@@ -71,12 +72,10 @@ function action(target, operator, operatorType) {
     pushToArray();
   } else if (operatorType === "SQRT") {
     target.classList.remove("active");
-// (numbersDisplayed.length === 0) ? numbersDisplayed.push(1): numbersDisplayed;
     totalArray.push(numbersDisplayed.join(''));
     accumulator = (Math.sqrt(totalArray[0]));
     totalArray.splice(0, totalArray.length, accumulator);
     DISPLAY.innerHTML = totalArray.join('');
-    console.log(totalArray);
   }
 
   function pushToArray() {
