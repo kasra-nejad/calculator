@@ -38,7 +38,7 @@ function operator(e) {
   function existingOperator(key) {
     let target = key;
     let operatorType = target.innerText;
-    let accumulator = [];
+    accumulator = [];
     operatorText(operatorType);
     numbersDisplayed = [];
     DISPLAY.innerHTML = totalArray.join('');
