@@ -4,6 +4,7 @@ const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b)).toFixed(1);
 const MULTI = (a, b) => (parseFloat(a) * parseFloat(b)).toFixed(1);
 const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b)).toFixed(1);
 const SQRT = (a) => (Math.sqrt(a)).toFixed(1);
+const PERCENT = (a, b) => (parseFloat(a) * (100 / b)).toFixed(1);
 const DISPLAY = document.querySelector('.display');
 
 let numbersDisplayed = [];
