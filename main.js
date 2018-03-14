@@ -16,6 +16,8 @@ let equalKey = document.querySelector('.equal .button');
 
 digitKeys.forEach(key => key.addEventListener("click", logNumber));
 actionKeys.forEach(key => key.addEventListener("click", operator));
+equalKey.addEventListener("click", operator);
+
 
 function logNumber(e) {
   let numberValue = e.target.innerText;
@@ -47,18 +49,25 @@ function operator(e) {
   }
 
   function operatorText(operatorType) {
-    if (operatorType === "+") {
-      action(target, ADD_UP, operatorType);
-    } else if (operatorType === "-") {
-      action(target, DEDUCT, operatorType);
-    } else if (operatorType === "*") {
-      action(target, MULTI, operatorType);
-    } else if (operatorType === "/") {
-      action(target, DIVIDE, operatorType);
-    } else if (operatorType === "SQRT") {
-      action(target, SQRT, operatorType)
+    switch (operatorType) {
+      case "+":
+        action(target, ADD_UP, operatorType);
+        break;
+      case "-":
+        action(target, DEDUCT, operatorType);
+        break;
+      case "*":
+        action(target, MULTI, operatorType);
+        break;
+      case "/":
+        action(target, DIVIDE, operatorType);
+        break;
+      case "SQRT":
+        action(target, SQRT, operatorType);
+        break;
     }
   }
+
 }
 
 function action(target, operator, operatorType) {
@@ -82,7 +91,6 @@ function action(target, operator, operatorType) {
     totalArray.push(numbersDisplayed.join(''));
     accumulator = totalArray.reduce(operator);
     totalArray.splice(0, totalArray.length, accumulator);
-    // console.log(totalArray);
   }
 
 }
