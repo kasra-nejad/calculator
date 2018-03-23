@@ -126,7 +126,7 @@ function action(target, operator, operatorType) {
   } else if (operatorType === "SQRT") {
     target.classList.remove("active");
     totalArray.push(numbersDisplayed.join(''));
-    accumulator = (Math.sqrt(totalArray[0]));
+    accumulator = (Math.sqrt(totalArray[0]).toFixed(2));
     totalArray.splice(0, totalArray.length, accumulator);
     DISPLAY.innerHTML = totalArray.join('');
   } else if (operatorType === "%") {
