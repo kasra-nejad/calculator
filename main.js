@@ -1,8 +1,8 @@
 "use strict";
-const ADD_UP = (a, b) => (parseFloat(a) + parseFloat(b)).toFixed(10);
-const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b)).toFixed(10);
-const MULTI = (a, b) => (parseFloat(a) * parseFloat(b)).toFixed(10);
-const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b)).toFixed(10);
+const ADD_UP = (a, b) => (parseFloat(a) + parseFloat(b));
+const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b));
+const MULTI = (a, b) => (parseFloat(a) * parseFloat(b));
+const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b));
 const SQRT = (a) => (Math.sqrt(a));
 const PERCENT = (a, b) => (parseFloat(a) * (parseFloat(b) / 100));
 const DISPLAY = document.querySelector('.display');
@@ -46,6 +46,7 @@ function logClick(e) {
 
 // displays the results after it has been calculated by action fucntion
 function operator(e) {
+
   if (e.type === "click") {
     var target = e.target;
     var operatorType = target.innerText;
@@ -80,6 +81,7 @@ function operator(e) {
 
   // checks to see what operator is selected and calls the appropriate calculation for it
   function operatorText(operatorType) {
+
     switch (operatorType) {
       case "+":
         action(target, ADD_UP, operatorType);
@@ -102,9 +104,6 @@ function operator(e) {
       case "C":
         action(target, null , operatorType);
         break;
-      // case "CE":
-      //   action(target, null , operatorType);
-      //   break;
     }
   }
 }
@@ -118,6 +117,7 @@ function action(target, operator, operatorType) {
     }
   })
   if (operatorType === "+" || operatorType === "-") {
+
     (numbersDisplayed.length === 0) ? numbersDisplayed.push(0): numbersDisplayed;
     tally();
   } else if (operatorType === "*" || operatorType === "/") {
