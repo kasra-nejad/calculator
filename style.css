@@ -6,7 +6,6 @@
 }
 
 body {
-  background-color: #f7f9fc;
   overflow: hidden;
   background-color: #0c0215fa;
 }
@@ -161,7 +160,7 @@ body {
   }
 
   .button {
-    font-size: 0.72em;
+    font-size: 0.70em;
     font-weight: ]bolder;
   }
 
