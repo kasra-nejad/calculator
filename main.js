@@ -156,16 +156,18 @@ function action(target, operator, operatorType) {
     clear();
   }
 
-  function pushToArray() {
-    totalArray.push(numbersDisplayed.join(''));
-    accumulator = totalArray.reduce(operator);
-    totalArray.splice(0, totalArray.length, accumulator);
-  }
+  // function pushToArray() {
+  //   totalArray.push(numbersDisplayed.join(''));
+  //   accumulator = totalArray.reduce(operator);
+  //   totalArray.splice(0, totalArray.length, accumulator);
+  // }
 
   function tally() {
     actionKeys.forEach(key => key.classList.remove("active"))
     target.classList.add("active");
-    pushToArray();
+    totalArray.push(numbersDisplayed.join(''));
+    accumulator = totalArray.reduce(operator);
+    totalArray.splice(0, totalArray.length, accumulator);
   }
 
   function clear() {
@@ -174,20 +176,5 @@ function action(target, operator, operatorType) {
     accumulator = [];
     DISPLAY.innerHTML = "";
   }
-
-  // function deleteOne() {
-  //   numbersDisplayed.pop(1);
-  //   console.log(numbersDisplayed);
-  //   if (totalArray.length !== 0) {
-  //     let lastNumber = totalArray[0].split("");
-  //     totalArray[0] = lastNumber.pop(1);
-  //     DISPLAY.innerHTML = totalArray.join('');
-  //     actionKeys.forEach(key => key.classList.remove("active"))
-  //     }
-  //     // console.log(numbersDisplayed);
-  //   totalArray.push(numbersDisplayed.join(''));
-  //   DISPLAY.innerHTML = totalArray.join('');
-  //   actionKeys.forEach(key => key.classList.remove("active"))
-  // }
 
 }

@@ -8,10 +8,11 @@
 body {
   background-color: #f7f9fc;
   overflow: hidden;
+  background-color: #0c0215fa;
 }
 
 .container {
-  width: 89vw;
+  width: 80vw;
   height: 100vh;
   display: grid;
   margin: 0 auto;
@@ -117,9 +118,9 @@ body {
   align-items: center;
 }
 
-@media (max-width: 970px) {
+@media (max-width: 1110px) {
   .container {
-    width: 80vw;
+    width: 70vw;
   }
 
   .calculator {
@@ -127,9 +128,9 @@ body {
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 850px) {
   .container {
-    width: 90vw;
+    width: 87vw;
   }
   .calculator {
     grid-column: 2/8;
