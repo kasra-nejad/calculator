@@ -32,17 +32,16 @@ body {
 
 .display {
   background-color: #afb4bc;
+  font-size: 2.45em;
   font-family: 'Orbitron', sans-serif;
   border: #50124f solid 2px;
   grid-row: 2/4;
   grid-column: 2/7;
-  font-size: 2.45em;
   color: #2f2b2b;
   display: grid;
   align-items: center;
   justify-items: end;
-  font-family:
-}
+  }
 
 .display h3 {
   width: 100%;
@@ -125,6 +124,10 @@ body {
   .calculator {
     grid-column: 2/8;
   }
+
+  .display {
+    font-size: 2em;
+  }
 }
 
 @media (max-width: 850px) {
@@ -133,6 +136,10 @@ body {
   }
   .calculator {
     grid-column: 2/8;
+  }
+
+  .display {
+    font-size: 1.5em;
   }
 
   .button {
@@ -157,6 +164,10 @@ body {
 
   .calculator {
     grid-column: 1/-1;
+  }
+
+  .display {
+    font-size: 1.40em;
   }
 
   .button {

@@ -1,8 +1,8 @@
 "use strict";
-const ADD_UP = (a, b) => (parseFloat(a) + parseFloat(b));
-const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b));
-const MULTI = (a, b) => (parseFloat(a) * parseFloat(b));
-const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b));
+const ADD_UP = (a, b) => (parseFloat(a) + parseFloat(b)).toFixed(10);
+const DEDUCT = (a, b) => (parseFloat(a) - parseFloat(b)).toFixed(10);
+const MULTI = (a, b) => (parseFloat(a) * parseFloat(b)).toFixed(10);
+const DIVIDE = (a, b) => (parseFloat(a) / parseFloat(b)).toFixed(10);
 const SQRT = (a) => (Math.sqrt(a));
 const PERCENT = (a, b) => (parseFloat(a) * (parseFloat(b) / 100));
 const DISPLAY = document.querySelector('.display');
@@ -155,12 +155,6 @@ function action(target, operator, operatorType) {
   } else if (operatorType === "C") {
     clear();
   }
-
-  // function pushToArray() {
-  //   totalArray.push(numbersDisplayed.join(''));
-  //   accumulator = totalArray.reduce(operator);
-  //   totalArray.splice(0, totalArray.length, accumulator);
-  // }
 
   function tally() {
     actionKeys.forEach(key => key.classList.remove("active"))
