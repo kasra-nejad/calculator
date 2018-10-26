@@ -46,6 +46,7 @@ function logClick(e) {
 
 // displays the results after it has been calculated by action fucntion
 function operator(e) {
+
   if (e.type === "click") {
     var target = e.target;
     var operatorType = target.innerText;
@@ -80,6 +81,7 @@ function operator(e) {
 
   // checks to see what operator is selected and calls the appropriate calculation for it
   function operatorText(operatorType) {
+
     switch (operatorType) {
       case "+":
         action(target, ADD_UP, operatorType);
@@ -102,9 +104,6 @@ function operator(e) {
       case "C":
         action(target, null , operatorType);
         break;
-      // case "CE":
-      //   action(target, null , operatorType);
-      //   break;
     }
   }
 }
@@ -118,6 +117,7 @@ function action(target, operator, operatorType) {
     }
   })
   if (operatorType === "+" || operatorType === "-") {
+
     (numbersDisplayed.length === 0) ? numbersDisplayed.push(0): numbersDisplayed;
     tally();
   } else if (operatorType === "*" || operatorType === "/") {
@@ -156,16 +156,12 @@ function action(target, operator, operatorType) {
     clear();
   }
 
-  function pushToArray() {
-    totalArray.push(numbersDisplayed.join(''));
-    accumulator = totalArray.reduce(operator);
-    totalArray.splice(0, totalArray.length, accumulator);
-  }
-
   function tally() {
     actionKeys.forEach(key => key.classList.remove("active"))
     target.classList.add("active");
-    pushToArray();
+    totalArray.push(numbersDisplayed.join(''));
+    accumulator = totalArray.reduce(operator);
+    totalArray.splice(0, totalArray.length, accumulator);
   }
 
   function clear() {
@@ -174,20 +170,5 @@ function action(target, operator, operatorType) {
     accumulator = [];
     DISPLAY.innerHTML = "";
   }
-
-  // function deleteOne() {
-  //   numbersDisplayed.pop(1);
-  //   console.log(numbersDisplayed);
-  //   if (totalArray.length !== 0) {
-  //     let lastNumber = totalArray[0].split("");
-  //     totalArray[0] = lastNumber.pop(1);
-  //     DISPLAY.innerHTML = totalArray.join('');
-  //     actionKeys.forEach(key => key.classList.remove("active"))
-  //     }
-  //     // console.log(numbersDisplayed);
-  //   totalArray.push(numbersDisplayed.join(''));
-  //   DISPLAY.innerHTML = totalArray.join('');
-  //   actionKeys.forEach(key => key.classList.remove("active"))
-  // }
 
 }
